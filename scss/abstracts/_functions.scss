@@ -1,0 +1,6 @@
+@use 'sass:math';
+@use '../abstracts/_variables' as v;
+
+@function calculate-rem($size) {
+  @return math.div($size, v.$base-font-size) * 1rem;
+}

@@ -1,0 +1,20 @@
+
+$primary-color: #10094C;
+$secondary-color: #F66617;
+$dark-text: #333;
+$light-text: #FFF;
+
+$base-font-size: 16;
+$font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$heading-font-stack: 'Roboto', sans-serif;
+
+$base-spacing: 20px;
+$small-spacing: 10px;
+$large-spacing: 40px;
+
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px,
+);

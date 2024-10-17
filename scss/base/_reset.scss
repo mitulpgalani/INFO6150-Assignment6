@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: $base-font-size;
+}
+
+body {
+    font-family: $font-stack;
+    color: $dark-text;
+    line-height: 1.6;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: $base-spacing;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: $font-stack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-stack;
+    margin-bottom: $small-spacing;
+}

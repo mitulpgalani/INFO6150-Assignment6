@@ -1,0 +1,83 @@
+@import '../layout/flexbox';
+
+
+$grid: 'grid-container';
+
+
+
+.hero {
+    background-color: $primary-color;
+    color: $light-text;
+    padding: calculate-rem(40) calculate-rem(20);
+    text-align: center;
+    
+    h1 {
+      font-size: calculate-rem(28);
+    }
+    
+    p {
+      font-size: calculate-rem(18);
+      margin-top: calculate-rem(10);
+    }
+  }
+  
+  .features {
+    .#{$grid} {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $base-spacing;
+      padding: $base-spacing;
+
+      @media (min-width: map-get($breakpoints, 'medium')) {
+        grid-template-columns:  repeat(3, 1fr);
+      }
+  
+      .feature-item {
+        background-color: $secondary-color;
+        color: $light-text;
+        padding: $base-spacing;
+        border-radius: calculate-rem(8);
+  
+        h2 {
+          font-size: calculate-rem(22);
+        }
+  
+        p {
+          font-size: calculate-rem(16);
+          margin-top: $small-spacing;
+        }
+      }
+    }
+  }
+
+  .benefits {
+    @include flex-center; 
+    flex-direction: column; 
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+      gap: $base-spacing;
+    }
+
+    .benefit-item {
+      text-align: center;
+    
+      img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  

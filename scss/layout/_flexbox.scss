@@ -1,0 +1,8 @@
+.flex-container {
+    @include flex-center;
+    flex-direction: column;
+
+    .flex-item {
+        margin: $small-spacing;
+    }
+}

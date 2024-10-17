@@ -1,0 +1,18 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin theme-button($bg-color, $text-color: $dark-text) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $small-spacing $base-spacing;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+    }
+}

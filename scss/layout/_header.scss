@@ -1,0 +1,11 @@
+header {
+    background-color: $primary-color;
+    color: $light-text;
+
+    .navbar {
+        @include flex-center;
+        margin: auto;
+        max-width: calculate-rem(1140);
+        width: 100%;
+    }
+}

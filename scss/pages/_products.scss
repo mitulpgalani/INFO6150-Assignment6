@@ -1,0 +1,101 @@
+@import '../abstracts/mixins';
+
+$products: (
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+);
+
+.product-intro {
+    padding: $base-spacing;
+    text-align: center;
+
+    h1 {
+        font-size: calculate-rem(28);
+    }
+
+    p {
+        font-size: calculate-rem(18);
+        margin-top: $small-spacing;
+    }
+}
+
+.product-grid {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(calculate-rem(300), 1fr));
+        gap: $base-spacing;
+        padding: $base-spacing $large-spacing;
+
+        @for $i from 1 through length($products) {
+            .product-item:nth-child(#{$i}) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 5px solid;
+                background-color: #ffffff;
+                border-radius: calculate-rem(8);
+                max-width: 300px;
+                overflow: hidden;
+                transition: transform 0.3s ease;
+                height: 100%;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-size: calculate-rem(20);
+                    padding-top: $small-spacing;
+                    padding-left: $small-spacing;
+                }
+
+                p {
+                    font-size: calculate-rem(16);
+                    padding: 0 $small-spacing $small-spacing;
+                }
+
+                // Apply alternating background colors based on position
+                @if $i % 2==0 {
+                    border-color: $primary-color;
+                    button {
+                        @include theme-button($bg-color: #10094C); 
+                    }
+                    button:hover {
+                        background-color: $secondary-color;
+                }
+            }
+                @else {
+                    border-color: $secondary-color;
+                    button {
+                        @include theme-button($bg-color: #F66617); 
+
+                    }
+                    button:hover {
+                        background-color: $primary-color;
+                }
+                }
+
+                button {
+                    color: #ffffff;
+                    padding: 10px 20px;
+                    border: none;
+                    left: 50%;
+                    bottom: $small-spacing;
+                    margin-bottom: 20px;
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
